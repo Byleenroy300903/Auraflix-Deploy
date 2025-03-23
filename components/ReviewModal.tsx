@@ -100,7 +100,7 @@ export default function ReviewModal({
           nation,
         };
   
-        fetch("http://localhost:8500/submit_review", {
+        fetch("https://auraflixdashboard-deploy.onrender.com/submit_review", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
