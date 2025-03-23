@@ -15,7 +15,7 @@ export default function ReviewModal({
   const [review, setReview] = useState("");
   const [location, setLocation] = useState<string>("Fetching location...");
 
-  const GOOGLE_MAPS_API_KEY = "AIzaSyBP5uV1TfyN5Mh3SPAegcqhDp4QAOFOFg8"; // Replace with your actual API key
+  const GOOGLE_MAPS_API_KEY = ""; // Replace with your actual API key
 
   useEffect(() => {
     if (isOpen) {
