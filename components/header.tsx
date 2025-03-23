@@ -31,7 +31,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Film className="h-6 w-6 text-primary" />
-          <span className="font-bold text-xl text-white">IMDb Clone</span>
+          <span className="font-bold text-xl text-white">Rating Application</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -39,7 +39,7 @@ export default function Header() {
           <form onSubmit={handleSearch} className="relative w-full">
             <Input
               type="search"
-              placeholder="Search IMDb Clone"
+              placeholder="Search for a Movie"
               className="w-full pl-10 pr-4 py-2 bg-gray-900 border-gray-700 text-white placeholder:text-gray-400 focus-visible:ring-primary"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}

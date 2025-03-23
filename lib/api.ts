@@ -132,8 +132,7 @@ function getMockGenres(): Genre[] {
 // Fetch popular movies with optional search query and genre filter
 export async function fetchMovies(query: string, genreId: string): Promise<Movie[]> {
   try {
-    // Since we're using a documentation URL instead of an actual API endpoint,
-    // we'll always return mock data
+
     console.log("Using mock movie data for demonstration purposes")
 
     // Get our mock movies

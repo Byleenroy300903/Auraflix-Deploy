@@ -7,6 +7,8 @@ import MovieCast from "@/components/movie-cast"
 import { formatDate, formatRuntime, formatMoney } from "@/lib/utils"
 import { Separator } from "@/components/ui/separator"
 import { Star, Clock, Calendar, DollarSign, TrendingUp, Award, ExternalLink } from "lucide-react"
+import ReviewButton from "@/components/ReviewButton";
+
 
 export async function generateMetadata({ params }: { params: { id: string } }) {
   const movie = await fetchMovieDetails(params.id)
@@ -16,6 +18,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
       title: "Movie Not Found",
     }
   }
+  
 
   return {
     title: `${movie.title} (${movie.release_date?.split("-")[0] || "N/A"}) - Movie Database`,
@@ -25,7 +28,8 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 
 export default async function MoviePage({ params }: { params: { id: string } }) {
   const movie = await fetchMovieDetails(params.id)
-
+  
+  
   if (!movie) {
     notFound()
   }
@@ -33,7 +37,7 @@ export default async function MoviePage({ params }: { params: { id: string } }) 
   const credits = await fetchMovieCredits(params.id)
   const directors = credits?.crew?.filter(person => person.job === "Director") || []
   const writers = credits?.crew?.filter(person => person.department === "Writing") || []
-
+  
   return (
     <main className="container mx-auto px-4 py-8">
       {/* Hero section with backdrop */}
@@ -91,6 +95,9 @@ export default async function MoviePage({ params }: { params: { id: string } }) 
             <div className="mb-6">
               <FavoriteButton movie={movie} />
             </div>
+            
+
+            
 
             {/* Quick info */}
             <div className="bg-card rounded-lg shadow-md p-4">
@@ -187,6 +194,7 @@ export default async function MoviePage({ params }: { params: { id: string } }) 
                 </Link>
               ))}
             </div>
+            
 
             <Separator orientation="vertical" className="h-6" />
 
@@ -273,6 +281,9 @@ export default async function MoviePage({ params }: { params: { id: string } }) 
               </div>
             </div>
           )}
+          <div className="mt-6">
+  <ReviewButton movieTitle={movie.title} />
+</div>
         </div>
       </div>
     </main>

@@ -9,7 +9,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "IMDb Clone - Movie Database Explorer",
+  title: "Rating Based Application",
   description: "Browse and discover movies in this IMDb-style movie database",
   generator: 'v0.dev'
 }

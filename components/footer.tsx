@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-center mb-6">
           <Film className="h-8 w-8 text-primary" />
-          <span className="font-bold text-xl text-white ml-2">IMDb Clone</span>
+          <span className="font-bold text-xl text-white ml-2">Rating Application</span>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
@@ -51,7 +51,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-sm text-gray-400">
-            <p>© {new Date().getFullYear()} IMDb Clone. This is a demo project, not affiliated with IMDb.</p>
+            <p>© {new Date().getFullYear()} This is a Rating application used for reducing spam ratings</p>
             <p className="mt-1">
               Powered by{" "}
               <a
